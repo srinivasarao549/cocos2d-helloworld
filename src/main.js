@@ -10,7 +10,7 @@ var HelloWorld = cocos.Layer.extend({
         @super;
 
         // Get size of canvas
-        var s = cocos.Director.get('sharedDirector.winSize');
+        var s = cocos.Director.get('sharedDirector').get('winSize');
 
         // Create label
         var label = cocos.Label.create({string: 'Hello, World!', fontName: 'Arial', fontSize: 76});
