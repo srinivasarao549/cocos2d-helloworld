@@ -4,7 +4,7 @@ var cocos = require('cocos2d'),
     geo = require('geometry');
 
 // Create a new layer
-var HelloWorld = cocos.Layer.extend({
+var HelloWorld = cocos.nodes.Layer.extend({
     init: function() {
         // You must always call the super class version of init
         @super;
@@ -13,7 +13,7 @@ var HelloWorld = cocos.Layer.extend({
         var s = cocos.Director.get('sharedDirector').get('winSize');
 
         // Create label
-        var label = cocos.Label.create({string: 'Hello, World!', fontName: 'Arial', fontSize: 76});
+        var label = cocos.nodes.Label.create({string: 'Hello, World!', fontName: 'Arial', fontSize: 76});
 
         // Add label to layer
         this.addChild({child: label, z:1});
@@ -32,7 +32,7 @@ var director = cocos.Director.get('sharedDirector');
 director.attachInView(document.getElementById('hello-world'));
 
 // Create a scene
-var scene = cocos.Scene.create();
+var scene = cocos.nodes.Scene.create();
 
 // Add our layer to the scene
 scene.addChild({child: HelloWorld.create()});
